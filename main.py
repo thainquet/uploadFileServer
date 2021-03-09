@@ -11,7 +11,6 @@ path = str(getThisDir()).replace("\\","/") + "/upload"
 
 def create_app():
     app = flask.Flask(__name__)
-    app.config["DEBUG"] = True
     app.config["UPLOAD_FOLDER"] = path
 
     @app.route('/', methods=['GET'])
@@ -48,8 +47,3 @@ def create_app():
         return resp
 
     return app
-
-
-if __name__ == "__main__":
-    app = create_app()
-    app.run(host='0.0.0.0')
